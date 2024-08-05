@@ -2,16 +2,17 @@ package com.app.domain.reply;
 
 import java.util.Objects;
 
-public class ReplyVO {
+public class ReplyDTO {
    private Long id;
    private String replyContent;
    private Long postId;
    private Long memberId;
+   private String memberName;
    private String createdDate;
    private String updatedDate;
    
-   public ReplyVO() {;}
-   
+   public ReplyDTO() {;}
+
    public Long getId() {
       return id;
    }
@@ -44,6 +45,14 @@ public class ReplyVO {
       this.memberId = memberId;
    }
 
+   public String getMemberName() {
+      return memberName;
+   }
+
+   public void setMemberName(String memberName) {
+      this.memberName = memberName;
+   }
+
    public String getCreatedDate() {
       return createdDate;
    }
@@ -62,8 +71,8 @@ public class ReplyVO {
 
    @Override
    public String toString() {
-      return "ReplyVO [id=" + id + ", replyContent=" + replyContent + ", postId=" + postId + ", memberId=" + memberId
-            + ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
+      return "ReplyDTO [id=" + id + ", replyContent=" + replyContent + ", postId=" + postId + ", memberId=" + memberId
+            + ", memberName=" + memberName + ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
    }
 
    @Override
@@ -79,7 +88,39 @@ public class ReplyVO {
          return false;
       if (getClass() != obj.getClass())
          return false;
-      ReplyVO other = (ReplyVO) obj;
+      ReplyDTO other = (ReplyDTO) obj;
       return Objects.equals(id, other.id);
    }
+   
+   public ReplyVO toVO() {
+      ReplyVO replyVO = new ReplyVO();
+      replyVO.setId(this.getId());
+      replyVO.setMemberId(this.getMemberId());
+      replyVO.setPostId(this.getPostId());
+      replyVO.setReplyContent(this.getReplyContent());
+      replyVO.setCreatedDate(this.getCreatedDate());
+      replyVO.setUpdatedDate(this.getUpdatedDate());
+      return replyVO;
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
