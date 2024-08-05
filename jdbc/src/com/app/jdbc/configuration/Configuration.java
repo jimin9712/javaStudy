@@ -1,4 +1,4 @@
-package com.app.member.configuration;
+package com.app.jdbc.configuration;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

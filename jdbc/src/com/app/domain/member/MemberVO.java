@@ -1,4 +1,4 @@
-package com.app.member.domain;
+package com.app.domain.member;
 
 import java.util.Objects;
 

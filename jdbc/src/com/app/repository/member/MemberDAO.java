@@ -1,4 +1,4 @@
-package com.app.member.repository;
+package com.app.repository.member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.app.member.configuration.Configuration;
-import com.app.member.domain.MemberVO;
+import com.app.domain.member.MemberVO;
+import com.app.jdbc.configuration.Configuration;
 
 public class MemberDAO {
    
